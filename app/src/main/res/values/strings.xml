@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MP3 DOWNLOADER</string>
+    <string name="youtube_link">YouTube Link</string>
+    <string name="title_mp3_downloader">Title MP3 Downloader</string>
+    <string name="icon">icon</string>
+    <string name="where_you_want_to_save_the_mp3">Where you want to save the MP3</string>
+    <string name="destination_folder">Destination Folder</string>
+    <string name="thumbnail">Thumbnail</string>
+    <string name="downloading">Downloading…</string>
+    <string name="_2_56mb_4_25mb">2.56MB / 4.25MB</string>
+    <string name="download_another_mp3">Download Another MP3</string>
+    <string name="mp3_successfully_saved_into_selected_folder">MP3 successfully saved into selected folder</string>
+    <string name="saving">Saving...</string>
+    <string name="_0">0%</string>
+</resources>

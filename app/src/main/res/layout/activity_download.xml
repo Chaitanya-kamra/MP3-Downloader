@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DownloadActivity">
+
+    <ImageView
+        android:id="@+id/ivTitle"
+        android:layout_width="204dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_title_image"
+        android:contentDescription="@string/title_mp3_downloader" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="24dp"
+        android:background="#FAFAFA"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="@id/ivTitle"
+        app:layout_constraintTop_toBottomOf="@id/ivTitle"
+        app:strokeColor="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="164dp"
+                android:layout_margin="14dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/image_placeholder"
+                android:contentDescription="@string/thumbnail" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="14dp"
+                android:textColor="#1A0D0D"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_thumbnail"
+                tools:text="Big Buck Bunny 60fps 4K - Official Blender Foundation Short Film…" />
+
+            <ImageView
+                android:id="@+id/iv_view"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_margin="14dp"
+                android:layout_marginVertical="16dp"
+                android:src="@drawable/ic_view"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                android:contentDescription="@string/icon" />
+
+            <TextView
+                android:id="@+id/tvView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_view"
+                app:layout_constraintStart_toEndOf="@id/iv_view"
+                app:layout_constraintTop_toTopOf="@id/iv_view"
+                tools:text="1.43B Views" />
+
+            <ImageView
+                android:id="@+id/iv_like"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginVertical="16dp"
+                android:layout_marginStart="32dp"
+                android:src="@drawable/ic_like"
+                app:layout_constraintBottom_toBottomOf="@id/iv_view"
+                app:layout_constraintStart_toEndOf="@id/tvView"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintTop_toTopOf="@id/iv_view"
+                android:contentDescription="@string/icon" />
+
+            <TextView
+                android:id="@+id/tvLikes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_like"
+                app:layout_constraintStart_toEndOf="@id/iv_like"
+                app:layout_constraintTop_toTopOf="@id/iv_like"
+                tools:text="17.4M Likes" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cclProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mcvCard">
+        <TextView
+            android:id="@+id/tvDownload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/downloading"/>
+        <TextView
+            android:id="@+id/tvprogress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp"
+            android:text="@string/_2_56mb_4_25mb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+        <TextView
+            android:id="@+id/tvSave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/saving"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/tvSaveProgress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp"
+            android:text="@string/_0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/ivProgressComplete"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_green_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            android:contentDescription="@string/icon" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:layout_marginTop="12dp"
+            android:progressTint="#3690FA"
+            android:progress="25"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDownload" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/ivHelper_info"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_star"
+        app:layout_constraintStart_toStartOf="@id/cclProgress"
+        app:layout_constraintTop_toBottomOf="@id/cclProgress"
+        android:visibility="invisible"
+        android:contentDescription="@string/icon" />
+
+    <TextView
+        android:id="@+id/tvHelperText"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:text="@string/mp3_successfully_saved_into_selected_folder"
+        android:textColor="#858181"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/ivHelper_info"
+        app:layout_constraintStart_toEndOf="@id/ivHelper_info"
+        app:layout_constraintTop_toTopOf="@id/ivHelper_info"
+        android:visibility="invisible"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_another"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="60dp"
+                android:background="@drawable/shape_button_rounded"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:text="@string/download_another_mp3"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

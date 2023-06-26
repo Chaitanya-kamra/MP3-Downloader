@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/ivTitle"
+        android:layout_width="204dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_title_image"
+        android:contentDescription="@string/title_mp3_downloader" />
+
+    <TextView
+        android:id="@+id/tvLink"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/youtube_link"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/ivTitle"
+        app:layout_constraintTop_toBottomOf="@id/ivTitle" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilYtLink"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="14dp"
+        android:background="#FFFAFAFA"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:endIconDrawable="@drawable/ic_action_cross"
+        app:endIconMode="clear_text"
+        app:boxStrokeColor="#D3D3D3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvLink"
+        app:layout_constraintTop_toBottomOf="@id/tvLink"
+        app:startIconDrawable="@drawable/ic_link">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textUri"
+            android:textSize="14sp"
+            android:textColor="#1A0D0D"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvDestinationFolder"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/destination_folder"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/tvLink"
+        app:layout_constraintTop_toBottomOf="@id/tilYtLink" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDestination"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="14dp"
+        android:background="#FFFAFAFA"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxStrokeColor="#D3D3D3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvDestinationFolder"
+        app:layout_constraintTop_toBottomOf="@id/tvDestinationFolder"
+        app:startIconDrawable="@drawable/ic_file"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDestination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:textSize="14sp"
+            android:textColor="#1A0D0D"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/helper_image"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_info"
+        app:layout_constraintStart_toStartOf="@id/tvLink"
+        app:layout_constraintTop_toBottomOf="@id/tilDestination"
+        android:contentDescription="@string/icon" />
+
+    <TextView
+        android:id="@+id/helperText"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toEndOf="@id/helper_image"
+        android:text="@string/where_you_want_to_save_the_mp3"
+        android:textColor="#858181"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/helper_image"
+        app:layout_constraintStart_toEndOf="@id/helper_image"
+        app:layout_constraintTop_toTopOf="@id/helper_image" />
+
+
+    <include
+        layout="@layout/progress_button_layout"
+        android:id="@+id/btn_Download"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/helperText" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
