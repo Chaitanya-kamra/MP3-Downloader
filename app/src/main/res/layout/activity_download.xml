@@ -33,17 +33,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/iv_thumbnail"
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardImage"
                 android:layout_width="match_parent"
                 android:layout_height="164dp"
                 android:layout_margin="14dp"
-                android:scaleType="centerCrop"
+                app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:id="@+id/iv_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
                 tools:src="@drawable/image_placeholder"
                 android:contentDescription="@string/thumbnail" />
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:id="@+id/tvTitle"
@@ -54,9 +61,11 @@
                 android:textColor="#1A0D0D"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_thumbnail"
+                app:layout_constraintTop_toBottomOf="@id/cardImage"
                 tools:text="Big Buck Bunny 60fps 4K - Official Blender Foundation Short Film…" />
 
             <ImageView
@@ -138,15 +147,16 @@
             app:layout_constraintTop_toTopOf="parent"
              />
         <TextView
-            android:id="@+id/tvSave"
+            android:id="@+id/tvConvertProgress"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/_02_45_04_50"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="@string/saving"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            />
         <TextView
             android:id="@+id/tvSaveProgress"
             android:layout_width="0dp"
@@ -171,12 +181,12 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
+            style="@style/customProgressBar"
             android:layout_width="match_parent"
             android:layout_height="7dp"
             android:layout_marginTop="12dp"
             android:progressTint="#3690FA"
-            android:progress="25"
+            android:progress="2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvDownload" />

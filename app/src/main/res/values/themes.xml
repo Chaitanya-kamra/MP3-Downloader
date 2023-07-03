@@ -6,4 +6,12 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
     <style name="Theme.MP3DOWNLOADER" parent="Base.Theme.MP3DOWNLOADER" />
+    <style name="colorTextInputLayoutStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">#D3D3D3</item>
+    </style>
+
+        <style name="customProgressBar" parent="@android:style/Widget.ProgressBar.Horizontal">
+            <item name="android:progressDrawable">@drawable/custom_progress_bar</item>
+        </style>
+
 </resources>

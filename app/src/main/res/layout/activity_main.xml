@@ -30,7 +30,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilYtLink"
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        style="@style/colorTextInputLayoutStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
@@ -42,11 +42,11 @@
         app:boxCornerRadiusTopStart="8dp"
         app:endIconDrawable="@drawable/ic_action_cross"
         app:endIconMode="clear_text"
-        app:boxStrokeColor="#D3D3D3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tvLink"
         app:layout_constraintTop_toBottomOf="@id/tvLink"
-        app:startIconDrawable="@drawable/ic_link">
+        app:startIconDrawable="@drawable/ic_link"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_link"
@@ -54,6 +54,8 @@
             android:layout_height="wrap_content"
             android:inputType="textUri"
             android:textSize="14sp"
+            android:maxLines="1"
+            android:ellipsize="middle"
             android:textColor="#1A0D0D"
             />
     </com.google.android.material.textfield.TextInputLayout>
