@@ -116,8 +116,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-
     // Open folder selection
     private fun openFolderSelection() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT_TREE)

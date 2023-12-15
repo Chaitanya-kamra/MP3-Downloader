@@ -56,13 +56,18 @@ class DownloadActivity : AppCompatActivity() {
         // Set the UI elements with video information
         binding.tvTitle.text = title
         binding.tvView.text = "${withSuffix(views!!.toLong())} Views"
-        binding.tvLikes.text = "${withSuffix(likes!!.toLong())} Likes"
+        try {
+            binding.tvLikes.text = "${withSuffix(likes!!.toLong())} Likes"
+        }catch (_:Exception){
+            // Crashing Here because youtube is not sending likes
+        }
         binding.btnAnother.setOnClickListener {
             finish()
         }
         // Set the folder path and initiate the video download
         folderPath = folderPathCont
         if (stream != null) {
+            Log.e("af",stream.toString())
             downloadVideo(stream)
         }
         // Load the video thumbnail using Picasso library
@@ -211,7 +216,6 @@ class DownloadActivity : AppCompatActivity() {
                 val formattedTotalDuration = formatTime(totalDuration)
                 val convertProgressText = "$formattedTime / $formattedTotalDuration"
                 binding.tvConvertProgress.text = convertProgressText
-
             }
         }
         FFmpeg.execute(command)
